@@ -9,4 +9,4 @@ import-mapping:
 output: gen/spec_base/issue.gen.go
 output-options:
   skip-prune: true
-    # skip-fmt: true
+  # skip-fmt: true

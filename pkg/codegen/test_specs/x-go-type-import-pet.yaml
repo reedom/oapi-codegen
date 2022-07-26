@@ -114,7 +114,7 @@ paths:
                     path: github.com/subosito/gotenv
       responses:
         '200':
-            $ref: '#/components/responses/ComplexResponse'
+          $ref: '#/components/responses/ComplexResponse'
 
 components:
   schemas:

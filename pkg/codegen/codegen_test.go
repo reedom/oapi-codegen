@@ -10,19 +10,22 @@ import (
 	"net/http"
 	"testing"
 
-	examplePetstoreClient "github.com/deepmap/oapi-codegen/examples/petstore-expanded"
-	examplePetstore "github.com/deepmap/oapi-codegen/examples/petstore-expanded/echo/api"
-	"github.com/deepmap/oapi-codegen/pkg/util"
+	examplePetstoreClient "github.com/reedom/oapi-codegen/examples/petstore-expanded"
+	examplePetstore "github.com/reedom/oapi-codegen/examples/petstore-expanded/echo/api"
+	"github.com/reedom/oapi-codegen/pkg/util"
+	"github.com/stretchr/testify/require"
+
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/golangci/lint-1"
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 )
 
 const (
 	remoteRefFile = `https://raw.githubusercontent.com/deepmap/oapi-codegen/master/examples/petstore-expanded` +
 		`/petstore-expanded.yaml`
-	remoteRefImport = `github.com/deepmap/oapi-codegen/examples/petstore-expanded`
+	remoteRefImport = `github.com/reedom/oapi-codegen/examples/petstore-expanded`
+	//examplePetstoreClient "github.com/reedom/oapi-codegen/examples/petstore-expanded"
+	//examplePetstore "github.com/reedom/oapi-codegen/examples/petstore-expanded/echo/api"
 )
 
 func checkLint(t *testing.T, filename string, code []byte) {
@@ -363,7 +366,7 @@ func TestRemoteExternalReference(t *testing.T) {
 	assert.Contains(t, code, "package api")
 
 	// Check import
-	assert.Contains(t, code, `externalRef0 "github.com/deepmap/oapi-codegen/examples/petstore-expanded"`)
+	assert.Contains(t, code, `externalRef0 "github.com/reedom/oapi-codegen/examples/petstore-expanded"`)
 
 	// Check generated oneOf structure:
 	assert.Contains(t, code, `

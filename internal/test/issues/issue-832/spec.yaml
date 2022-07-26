@@ -35,7 +35,7 @@ components:
         status:
           x-go-type-name: Document_Status
           type: string
-          enum: [one, two, three, four]
+          enum: [ one, two, three, four ]
     DocumentStatus:
       type: object
       properties:

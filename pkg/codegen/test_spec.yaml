@@ -181,17 +181,17 @@ components:
       properties:
         numerics:
           type: integer
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
         enumNames:
           type: integer
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
           x-enumNames:
             - zero
             - one
             - two
         enumVarnames:
           type: integer
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
           x-enum-varnames:
             - na
             - single

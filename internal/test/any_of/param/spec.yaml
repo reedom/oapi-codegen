@@ -7,16 +7,16 @@ paths:
   /test:
     get:
       parameters:
-      - name: test
-        in: query
-        schema:
-          $ref: '#/components/schemas/test'
-      - name: test2
-        in: query
-        schema:
-          type: array
-          items:
-            $ref: '#/components/schemas/test2'
+        - name: test
+          in: query
+          schema:
+            $ref: '#/components/schemas/test'
+        - name: test2
+          in: query
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/test2'
 components:
   schemas:
     test:
