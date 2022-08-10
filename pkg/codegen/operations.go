@@ -287,6 +287,14 @@ func (o *OperationDefinition) GetResponseTypeDefinitions() ([]ResponseTypeDefini
 				// We can only generate a type if we have a schema:
 				if contentType.Schema != nil {
 					responseSchema, err := GenerateGoSchema(contentType.Schema, []string{responseName})
+					// For a shared response, use tye type name extracted from the reference path instead of extracted type definition.
+					if responseRef.Ref != "" {
+						goType, err := RefPathToGoType(responseRef.Ref)
+						if err != nil {
+							return nil, fmt.Errorf("Unable to extract Go type from %s: %w", responseRef.Ref, err)
+						}
+						responseSchema.GoType = goType
+					}
 					if err != nil {
 						return nil, fmt.Errorf("Unable to determine Go type for %s.%s: %w", o.OperationId, contentTypeName, err)
 					}
