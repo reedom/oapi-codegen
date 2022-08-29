@@ -509,8 +509,8 @@ func oapiSchemaToGoType(schema *openapi3.Schema, path []string, outSchema *Schem
 		} else if f == "uint" {
 			outSchema.GoType = "uint"
 		} else if f == "" {
-			if globalState.options.OutputOptions.TypeMapping.Integer != "" {
-				outSchema.GoType = globalState.options.OutputOptions.TypeMapping.Integer
+			if globalState.options.OutputOptions.PrimitiveTypeMapping.Integer != "" {
+				outSchema.GoType = globalState.options.OutputOptions.PrimitiveTypeMapping.Integer
 			} else {
 				outSchema.GoType = "int"
 			}
@@ -523,8 +523,8 @@ func oapiSchemaToGoType(schema *openapi3.Schema, path []string, outSchema *Schem
 		if f == "double" {
 			outSchema.GoType = "float64"
 		} else if f == "float" || f == "" {
-			if globalState.options.OutputOptions.TypeMapping.Numeric != "" {
-				outSchema.GoType = globalState.options.OutputOptions.TypeMapping.Numeric
+			if globalState.options.OutputOptions.PrimitiveTypeMapping.Numeric != "" {
+				outSchema.GoType = globalState.options.OutputOptions.PrimitiveTypeMapping.Numeric
 			} else {
 				outSchema.GoType = "float32"
 			}

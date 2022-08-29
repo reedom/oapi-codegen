@@ -746,13 +746,14 @@ This tells us that in order to resolve references generated from `some_spec.yaml
 need to import `github.com/deepmap/some-package`. You may specify multiple mappings
 by comma separating them in the form `key1:value1,key2:value2`.
 
-### Type Mappings
+### Primitive Type Mappings
 
-To specify OpenAPI type to Go type mapping, add `type-mapping` section in your configuration file as following:
+To specify OpenAPI primitive type to Go type mapping, add `  primitive-type-mapping` 
+section in your configuration file as following:
 
 ```yaml
 output-options:
-  type-mapping:
+  primitive-type-mapping:
     integer: int64               # default: int
     numeric: float64             # default: float32
 ```
