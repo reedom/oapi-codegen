@@ -74,13 +74,14 @@ type OutputOptions struct {
 	ExcludeTags   []string          `yaml:"exclude-tags,omitempty"`   // Exclude operations that have one of these tags. Ignored when empty.
 	UserTemplates map[string]string `yaml:"user-templates,omitempty"` // Override built-in templates from user-provided files
 
-	ExcludeSchemas     []string    `yaml:"exclude-schemas,omitempty"`      // Exclude from generation schemas with given names. Ignored when empty.
-	ResponseTypeSuffix string      `yaml:"response-type-suffix,omitempty"` // The suffix used for responses types
-	TypeMapping        TypeMapping `yaml:"type-mapping,omitempty"`         // Type mapping.
+	ExcludeSchemas     []string `yaml:"exclude-schemas,omitempty"`      // Exclude from generation schemas with given names. Ignored when empty.
+	ResponseTypeSuffix string   `yaml:"response-type-suffix,omitempty"` // The suffix used for responses types
+
+	PrimitiveTypeMapping PrimitiveTypeMapping `yaml:"primitive-type-mapping,omitempty"` // OpenAPI primitive type mapping.
 }
 
-// TypeMapping contains type mapping.
-type TypeMapping struct {
+// PrimitiveTypeMapping contains OpenAPI primitive type mapping.
+type PrimitiveTypeMapping struct {
 	Integer string `yaml:"integer"` // Go type for "integer".
 	Numeric string `yaml:"numeric"` // Go type for "numeric"
 }
