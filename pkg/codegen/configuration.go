@@ -90,11 +90,11 @@ type OutputOptions struct {
 	ClientTypeName      string   `yaml:"client-type-name,omitempty"`     // Override the default generated client type with the value
 	InitialismOverrides bool     `yaml:"initialism-overrides,omitempty"` // Whether to use the initialism overrides
 
-	TypeMapping TypeMapping `yaml:"type-mapping,omitempty"` // Type mapping.
+	PrimitiveTypeMapping PrimitiveTypeMapping `yaml:"primitive-type-mapping,omitempty"` // OpenAPI primitive type mapping.
 }
 
-// TypeMapping contains type mapping.
-type TypeMapping struct {
+// PrimitiveTypeMapping contains OpenAPI primitive type mapping.
+type PrimitiveTypeMapping struct {
 	Integer string `yaml:"integer"` // Go type for "integer".
 	Numeric string `yaml:"numeric"` // Go type for "numeric"
 }
