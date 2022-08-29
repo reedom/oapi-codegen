@@ -146,12 +146,13 @@ type Constants struct {
 //
 // Let's use this example schema:
 // components:
-//  schemas:
-//    Person:
-//      type: object
-//      properties:
-//      name:
-//        type: string
+//
+//	schemas:
+//	  Person:
+//	    type: object
+//	    properties:
+//	    name:
+//	      type: string
 type TypeDefinition struct {
 	// The name of the type, eg, type <...> Person
 	TypeName string
@@ -508,6 +509,12 @@ func oapiSchemaToGoType(schema *openapi3.Schema, path []string, outSchema *Schem
 			outSchema.GoType = "uint8"
 		} else if f == "uint" {
 			outSchema.GoType = "uint"
+		} else if f == "" {
+			if globalState.options.OutputOptions.TypeMapping.Integer != "" {
+				outSchema.GoType = globalState.options.OutputOptions.TypeMapping.Integer
+			} else {
+				outSchema.GoType = "int"
+			}
 		} else {
 			outSchema.GoType = "int"
 		}
@@ -517,7 +524,11 @@ func oapiSchemaToGoType(schema *openapi3.Schema, path []string, outSchema *Schem
 		if f == "double" {
 			outSchema.GoType = "float64"
 		} else if f == "float" || f == "" {
-			outSchema.GoType = "float32"
+			if globalState.options.OutputOptions.TypeMapping.Numeric != "" {
+				outSchema.GoType = globalState.options.OutputOptions.TypeMapping.Numeric
+			} else {
+				outSchema.GoType = "float32"
+			}
 		} else {
 			return fmt.Errorf("invalid number format: %s", f)
 		}
