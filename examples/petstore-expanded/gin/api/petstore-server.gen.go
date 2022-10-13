@@ -13,9 +13,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/reedom/oapi-codegen/pkg/runtime"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/gin-gonic/gin"
+	"github.com/reedom/oapi-codegen/pkg/runtime"
 )
 
 // ServerInterface represents all server handlers.
