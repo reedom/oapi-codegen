@@ -13,9 +13,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/reedom/oapi-codegen/pkg/runtime"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/gorilla/mux"
+	"github.com/reedom/oapi-codegen/pkg/runtime"
 )
 
 // Error defines model for Error.

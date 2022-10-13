@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/go-chi/chi/v5"
 	"github.com/reedom/oapi-codegen/pkg/runtime"
 	openapi_types "github.com/reedom/oapi-codegen/pkg/types"
-	"github.com/go-chi/chi/v5"
 )
 
 // Defines values for GetWithContentTypeParamsContentType.
