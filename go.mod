@@ -2,7 +2,6 @@ module github.com/reedom/oapi-codegen
 
 require (
 	github.com/apapsch/go-jsonmerge/v2 v2.0.0
-	github.com/deepmap/oapi-codegen v1.11.0
 	github.com/getkin/kin-openapi v0.104.0
 	github.com/gin-gonic/gin v1.8.1
 	github.com/go-chi/chi/v5 v5.0.7
@@ -57,6 +56,7 @@ require (
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20220411224347-583f2d630306 // indirect
+	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
